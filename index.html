@@ -1,0 +1,276 @@
+<HTML>
+    <HEAD>
+        <TITLE>ProyectoBillar</TITLE>
+        <link rel="stylesheet" href="style.css">
+        </style>
+    </HEAD>
+    <BODY>
+        <tbody style="border: hidden">
+        <tr style="border: hidden">
+        <td style="border: hidden">
+      <CENTER>
+      <img src="img/logoPool3.png" width="300" >
+      </CENTER>
+      <CENTER>
+        <table>
+          <tr>
+            <td>
+              <h2>Mesa 1</h2>
+              <img src="img/mesaOff.jpeg" id="mesa" HSPACE="20" VSPACE="5" onclick="mesa();" width="350">
+              <div id="clockdate">
+                <div class="clockdate-wrapper">
+                  <h1>
+                  <div id="inicial">Hora inicial:</div>
+                  <div id="final">Hora final:</div>
+                  <div id="dif">Total:</div>
+                </h1>
+                </div>
+              </div>
+            </td>
+              <td>
+                <h2>Mesa 2</h2>
+                <img src="img/mesaOff2.jpeg" id="mesa2" HSPACE="20" VSPACE="5" onclick="mesa2();" width="350">
+                <div id="clockdate">
+                  <div class="clockdate-wrapper">
+                    <h1>
+                    <div id="inicial2">Hora inicial:</div>
+                    <div id="final2">Hora final:</div>
+                    <div id="dif2">Total:</div>
+                  </h1>
+                  </div>
+                </div>
+
+              </td>
+              <td>
+                <h2>Mesa 3</h2>
+                <img src="img/mesaOff3.jpeg" id="mesa3" HSPACE="20" VSPACE="5" onclick="mesa3();" width="350">
+                <div id="clockdate">
+                  <div class="clockdate-wrapper">
+                    <h1>
+                    <div id="inicial3">Hora inicial:</div>
+                    <div id="final3">Hora final:</div>
+                    <div id="dif3">Total:</div>
+                  </h1>
+                  </div>
+                </div>
+              </td>
+          </tr>
+          <tr>
+            <td>
+              <h2>Mesa 4</h2>
+              <img src="img/mesaOff4.jpeg" id="mesa4" HSPACE="20" VSPACE="5" onclick="mesa4();" width="350">
+              <div id="clockdate">
+                <div class="clockdate-wrapper">
+                  <h1>
+                  <div id="inicial4">Hora inicial:</div>
+                  <div id="final4">Hora final:</div>
+                  <div id="dif4">Total:</div>
+                </h1>
+                </div>
+              </div>
+            </td>
+            <td>
+              <h2>Mesa 5</h2>
+              <img src="img/mesaOff5.jpeg" id="mesa5" HSPACE="20" VSPACE="5" onclick="mesa5();" width="350">
+              <div id="clockdate">
+                <div class="clockdate-wrapper">
+                  <h1>
+                  <div id="inicial5">Hora inicial:</div>
+                  <div id="final5">Hora final:</div>
+                  <div id="dif5">Total:</div>
+                </h1>
+                </div>
+              </div>
+            </td>
+            <td>
+              <h2>Mesa 6</h2>
+              <img src="img/mesaOff6.jpeg" id="mesa6" HSPACE="20" VSPACE="5" onclick="mesa6();" width="350">
+              <div id="clockdate">
+                <div class="clockdate-wrapper">
+                  <h1>
+                  <div id="inicial6">Hora inicial:</div>
+                  <div id="final6">Hora final:</div>
+                  <div id="dif6">Total:</div>
+                </h1>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      <script>
+      var i1=0,f1=0,t1=0,i2=0,f2=0,t2=0,i3=0,f3=0,t3=0,i4=0,f4=0,t4=0,i5=0,f5=0,t5=0,i6=0,f6=0,t6=0;
+        const mesa = ()=>{
+          let mesa = document.getElementById("mesa");
+          if (mesa.src.match('mesaOff')){
+            mesa.src = "img/mesaOn.gif";
+            i1=tiempo1();
+            var hora1 = Math.trunc(i1/1);
+            var minuto1= Math.trunc((i1-hora1)*60);
+            var segundo1= Math.trunc((i1-hora1-minuto1/60)*3600)
+            var objetivo = document.getElementById('inicial');
+            objetivo.innerHTML = "Hora inicial: "+checkTime(hora1)+":"+checkTime(minuto1)+":"+checkTime(segundo1);
+            objetivo = document.getElementById('final');
+            objetivo.innerHTML = "Hora final: EN USO";
+          }else {
+            mesa.src = "img/mesaOff.jpeg"
+            f1=tiempo2();
+            t1=f1-i1;
+            var hora2 = Math.trunc(f1/1);
+            var minuto2= Math.trunc((f1-hora2)*60);
+            var segundo2= Math.trunc((f1-hora2-minuto2/60)*3600)
+            objetivo = document.getElementById('final');
+            objetivo.innerHTML = "Hora final: "+checkTime(hora2)+":"+checkTime(minuto2)+":"+checkTime(segundo2);
+            objetivo = document.getElementById('dif');
+            objetivo.innerHTML = "Total: $"+t1.toFixed(2);
+          }
+        }
+        const mesa2 = ()=>{
+          let mesa = document.getElementById("mesa2");
+          if (mesa.src.match('mesaOff2')){
+            mesa.src = "img/mesaOn2.gif";
+            i2=tiempo1();
+            var hora1 = Math.trunc(i2/1);
+            var minuto1= Math.trunc((i2-hora1)*60);
+            var segundo1= Math.trunc((i2-hora1-minuto1/60)*3600)
+            var objetivo = document.getElementById('inicial2');
+            objetivo.innerHTML = "Hora inicial: "+checkTime(hora1)+":"+checkTime(minuto1)+":"+checkTime(segundo1);
+            objetivo = document.getElementById('final2');
+            objetivo.innerHTML = "Hora final: EN USO";
+          }else {
+            mesa.src = "img/mesaOff2.jpeg"
+            f2=tiempo2();
+            t2=f2-i2;
+            var hora2 = Math.trunc(f2/1);
+            var minuto2= Math.trunc((f2-hora2)*60);
+            var segundo2= Math.trunc((f2-hora2-minuto2/60)*3600)
+            objetivo = document.getElementById('final2');
+            objetivo.innerHTML = "Hora final: "+checkTime(hora2)+":"+checkTime(minuto2)+":"+checkTime(segundo2);
+            objetivo = document.getElementById('dif2');
+            objetivo.innerHTML = "Total: $"+t2.toFixed(2);
+          }
+        }
+        const mesa3 = ()=>{
+          let mesa = document.getElementById("mesa3");
+          if (mesa.src.match('mesaOff3')){
+            mesa.src = "img/mesaOn3.gif";
+            i3=tiempo1();
+            var hora1 = Math.trunc(i3/1);
+            var minuto1= Math.trunc((i3-hora1)*60);
+            var segundo1= Math.trunc((i3-hora1-minuto1/60)*3600)
+            var objetivo = document.getElementById('inicial3');
+            objetivo.innerHTML = "Hora inicial: "+checkTime(hora1)+":"+checkTime(minuto1)+":"+checkTime(segundo1);
+            objetivo = document.getElementById('final3');
+            objetivo.innerHTML = "Hora final: EN USO";
+          }else {
+            mesa.src = "img/mesaOff3.jpeg"
+            f3=tiempo2();
+            t3=f3-i3;
+            var hora2 = Math.trunc(f3/1);
+            var minuto2= Math.trunc((f3-hora2)*60);
+            var segundo2= Math.trunc((f3-hora2-minuto2/60)*3600)
+            objetivo = document.getElementById('final3');
+            objetivo.innerHTML = "Hora final: "+checkTime(hora2)+":"+checkTime(minuto2)+":"+checkTime(segundo2);
+            objetivo = document.getElementById('dif3');
+            objetivo.innerHTML = "Total: $"+t3.toFixed(2);
+          }
+        }
+        const mesa4 = ()=>{
+          let mesa = document.getElementById("mesa4");
+          if (mesa.src.match('mesaOff4')){
+            mesa.src = "img/mesaOn4.gif";
+            i4=tiempo1();
+            var hora1 = Math.trunc(i4/1);
+            var minuto1= Math.trunc((i4-hora1)*60);
+            var segundo1= Math.trunc((i4-hora1-minuto1/60)*3600)
+            var objetivo = document.getElementById('inicial4');
+            objetivo.innerHTML = "Hora inicial: "+checkTime(hora1)+":"+checkTime(minuto1)+":"+checkTime(segundo1);
+            objetivo = document.getElementById('final4');
+            objetivo.innerHTML = "Hora final: EN USO";
+          }else {
+            mesa.src = "img/mesaOff4.jpeg"
+            f4=tiempo2();
+            t4=f4-i4;
+            var hora2 = Math.trunc(f4/1);
+            var minuto2= Math.trunc((f4-hora2)*60);
+            var segundo2= Math.trunc((f4-hora2-minuto2/60)*3600)
+            objetivo = document.getElementById('final4');
+            objetivo.innerHTML = "Hora final: "+checkTime(hora2)+":"+checkTime(minuto2)+":"+checkTime(segundo2);
+            objetivo = document.getElementById('dif4');
+            objetivo.innerHTML = "Total: $"+t4.toFixed(2);
+          }
+        }
+        const mesa5 = ()=>{
+          let mesa = document.getElementById("mesa5");
+          if (mesa.src.match('mesaOff5')){
+            mesa.src = "img/mesaOn5.gif";
+            i5=tiempo1();
+            var hora1 = Math.trunc(i5/1);
+            var minuto1= Math.trunc((i5-hora1)*60);
+            var segundo1= Math.trunc((i5-hora1-minuto1/60)*3600)
+            var objetivo = document.getElementById('inicial5');
+            objetivo.innerHTML = "Hora inicial: "+checkTime(hora1)+":"+checkTime(minuto1)+":"+checkTime(segundo1);
+            objetivo = document.getElementById('final5');
+            objetivo.innerHTML = "Hora final: EN USO";
+          }else {
+            mesa.src = "img/mesaOff5.jpeg"
+            f5=tiempo2();
+            t5=f5-i5;
+            var hora2 = Math.trunc(f5/1);
+            var minuto2= Math.trunc((f5-hora2)*60);
+            var segundo2= Math.trunc((f5-hora2-minuto2/60)*3600)
+            objetivo = document.getElementById('final5');
+            objetivo.innerHTML = "Hora final: "+checkTime(hora2)+":"+checkTime(minuto2)+":"+checkTime(segundo2);
+            objetivo = document.getElementById('dif5');
+            objetivo.innerHTML = "Total: $"+t5.toFixed(2);
+          }
+        }
+        const mesa6 = ()=>{
+          let mesa = document.getElementById("mesa6");
+          if (mesa.src.match('mesaOff6')){
+            mesa.src = "img/mesaOn6.gif";
+            i6=tiempo1();
+            var hora1 = Math.trunc(i6/1);
+            var minuto1= Math.trunc((i6-hora1)*60);
+            var segundo1= Math.trunc((i6-hora1-minuto1/60)*3600)
+            var objetivo = document.getElementById('inicial6');
+            objetivo.innerHTML = "Hora inicial: "+checkTime(hora1)+":"+checkTime(minuto1)+":"+checkTime(segundo1);
+            objetivo = document.getElementById('final6');
+            objetivo.innerHTML = "Hora final: EN USO";
+          }else {
+            mesa.src = "img/mesaOff6.jpeg"
+            f6=tiempo2();
+            t6=f6-i6;
+            var hora2 = Math.trunc(f6/1);
+            var minuto2= Math.trunc((f6-hora2)*60);
+            var segundo2= Math.trunc((f6-hora2-minuto2/60)*3600)
+            objetivo = document.getElementById('final6');
+            objetivo.innerHTML = "Hora final: "+checkTime(hora2)+":"+checkTime(minuto2)+":"+checkTime(segundo2);
+            objetivo = document.getElementById('dif6');
+            objetivo.innerHTML = "Total: $"+t6.toFixed(2);
+          }
+        }
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+        function tiempo1(){
+          var today = new Date();
+          var hr = today.getHours();
+          var min = today.getMinutes();
+          var sec = today.getSeconds();
+          mesaInicial= hr + min/60 + sec/3600;
+          return mesaInicial
+        }
+        function tiempo2(){
+          var today = new Date();
+          var hr2 = today.getHours();
+          var min2 = today.getMinutes();
+          var sec2 = today.getSeconds();
+          mesaFinal= hr2 + min2/60 + sec2/3600;
+          return mesaFinal;
+        }
+      </script>
+    </BODY>
+</HTML>
